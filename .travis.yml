@@ -6,5 +6,5 @@ services:
   - docker
 
 script:
-  - docker run -d -v $PWD/build-host.sh:/build-host.sh archlinux/base sh /build-host.sh
-  - ./.travis-ci/test-docker.sh
+  - docker run -t -v $PWD/build-host.sh:/build-host.sh archlinux/base sh /build-host.sh
+  - ./.ci/test-docker.sh
