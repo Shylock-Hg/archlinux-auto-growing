@@ -6,5 +6,6 @@ services:
   - docker
 
 script:
-  - docker run -t -v $PWD/build-host.sh:/build-host.sh archlinux/base sh /build-host.sh
+  - echo 'exit' | docker run -t -v $PWD/build-stag1-root.sh:/build-stag1-root.sh -v $PWD/build-stag2-shylock.sh:/build-stag2-shylock.sh archlinux/base sh /build-host.sh
+  - docker restart $(docker ps -qa)
   - ./.ci/test-docker.sh
