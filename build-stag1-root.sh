@@ -41,4 +41,4 @@ echo 'shylock ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
 echo 'shylock:huangshihai' | chpasswd && \
 \
 # shylock
-sudo -uH shylock sh ./build-stag2-shylock.sh
+sudo -Hu shylock sh ./build-stag2-shylock.sh
