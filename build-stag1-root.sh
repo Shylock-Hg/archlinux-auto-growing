@@ -28,6 +28,7 @@ readonly packages="\
 # root
 eval \
 echo 'root:hsh5757124xyz' | chpasswd && \
+echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
 \
 # upgrade system
 pacman --noconfirm -Syu && \
