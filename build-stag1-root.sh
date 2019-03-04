@@ -20,7 +20,7 @@ readonly packages="\
         arm-none-eabi-newlib arm-none-eabi-binutils \
         cronie \
         ttf-hack otf-fira-code \
-        xorg-xinit gnome \
+        xorg-xinit xfce4 xfce4-goodies \
         firefox \
         docker docker-compose \
 "
@@ -43,3 +43,4 @@ echo 'shylock:huangshihai' | chpasswd && \
 \
 # shylock
 sudo -Hu shylock sh ./build-stag2-shylock.sh
+
