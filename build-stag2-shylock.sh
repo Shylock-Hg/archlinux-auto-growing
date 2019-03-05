@@ -71,5 +71,7 @@ $NATIVE_INSTALL code && \
 ln -sf $HOME/.config/'Code - OSS' $HOME/.config/Code && \
 ln -sf $HOME/.vscode-oss $HOME/.vscode && \
 # reStructuredText supports for vscode plugin
-pip install --user docutils doc8
+pip install --user docutils doc8 && \
+# sourcetrail
+$AUR_INSTALL sourcetrail
 
