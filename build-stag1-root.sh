@@ -20,7 +20,7 @@ readonly packages="\
         arm-none-eabi-newlib arm-none-eabi-binutils \
         cronie \
         ttf-hack otf-fira-code \
-        xorg-xinit xfce4 xfce4-goodies \
+        xorg-xinit xorg xfce4 xfce4-goodies \
         firefox \
         docker docker-compose \
 "
