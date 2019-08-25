@@ -29,6 +29,8 @@ curl -s https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 \
 # rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+echo 'export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"' && \
+echo 'export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"' && \
 \
 # yay
 git clone https://aur.archlinux.org/yay.git && \
