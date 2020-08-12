@@ -12,12 +12,11 @@ set -e;
 
 # environament variable for system package manager
 readonly packages="\
-        base-devel \
         git vim wget gdb clang lldb cmake \
         openssh boost boost-libs valgrind man man-pages \
         python-pip python2-pip ruby nodejs yarn \
         cronie \
-        ttf-hack otf-fira-code \
+        ttf-hack \
         xorg-xinit xfce4 xfce4-goodies \
         firefox \
         docker docker-compose \
