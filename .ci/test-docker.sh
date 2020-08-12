@@ -7,24 +7,24 @@
 set -e
 
 # testing mksource.sh
-docker exec -d $(docker ps -q) mksource -h && \
-docker exec -d $(docker ps -q) mksource -n Makefile && \
-docker exec -d $(docker ps -q) mksource -n hello_c.h && \
-docker exec -d $(docker ps -q) mksource -n hello_c.c && \
-docker exec -d $(docker ps -q) mksource -n hello_cc.hh && \
-docker exec -d $(docker ps -q) mksource -n hello_cc.cc && \
-docker exec -d $(docker ps -q) mksource -n hello_python.py && \
-docker exec -d $(docker ps -q) mksource -n hello_shell.sh
+mksource -h && \
+mksource -n Makefile && \
+mksource -n hello_c.h && \
+mksource -n hello_c.c && \
+mksource -n hello_cc.hh && \
+mksource -n hello_cc.cc && \
+mksource -n hello_python.py && \
+mksource -n hello_shell.sh
 
 # testing win2nix.sh
 #docker exec -d $(docker ps -q) win2nix -h
 
 # testing archlinux-python.sh
-docker exec -d $(docker ps -q) archlinux-python -h && \
-docker exec -d $(docker ps -q) archlinux-python -p python2 && \
-docker exec -d $(docker ps -q) archlinux-python -p python3
+archlinux-python -h && \
+archlinux-python -p python2 && \
+archlinux-python -p python3
 
 # testing startup.sh
-docker exec -d $(docker ps -q) startup -h && \
-docker exec -d $(docker ps -q) startup -t c test.c hello.c && \
-docker exec -d $(docker ps -q) startup -t cc test.cc hello.cc
+startup -h && \
+startup -t c test.c hello.c && \
+startup -t cc test.cc hello.cc
