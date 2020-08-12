@@ -12,7 +12,7 @@ set -e;
 
 # environament variable for system package manager
 readonly packages="\
-        sudo binutils make gcc pkg-config fakeroot \
+        sudo binutils make gcc pkg-config fakeroot gettext \
         git vim wget gdb clang lldb cmake \
         openssh boost boost-libs valgrind man man-pages \
         python-pip python2-pip ruby nodejs yarn \
