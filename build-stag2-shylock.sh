@@ -67,6 +67,7 @@ echo 'exec startxfce4' >> ~/.xinitrc && \
 # vscode
 $NATIVE_INSTALL code && \
 # vscode setting map
+mkdir -p $HOME/.config && \
 ln -sf $HOME/.config/'Code - OSS' $HOME/.config/Code && \
 ln -sf $HOME/.vscode-oss $HOME/.vscode && \
 # reStructuredText supports for vscode plugin
