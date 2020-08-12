@@ -20,7 +20,7 @@ jobs:
     container:
       image: archlinux/base
       env:
-        CI_ROOT_PASSWORD: ${{ CI_ROOT_PASSWORD }}
+        CI_ROOT_PASSWORD: ${{ secrets.CI_ROOT_PASSWORD }}
         CI_USER_PASSWORD: ${{ secrets.CI_USER_PASSWORD }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
