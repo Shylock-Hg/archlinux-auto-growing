@@ -25,7 +25,7 @@ readonly packages="\
 
 # root
 eval \
-echo 'root:hsh5757124xyz' | chpasswd && \
+echo "root:${CI_ROOT_PASSWORD}" | chpasswd && \
 echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
 \
 # upgrade system
@@ -37,7 +37,7 @@ pacman --noconfirm --needed -Sy $packages && \
 # add the user
 useradd -m -g users -G wheel -s /bin/bash shylock && \
 echo 'shylock ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
-echo 'shylock:huangshihai' | chpasswd && \
+echo "shylock:${CI_USER_PASSWORD}" | chpasswd && \
 \
 # shylock
 sudo -Hu shylock sh ./build-stag2-shylock.sh
