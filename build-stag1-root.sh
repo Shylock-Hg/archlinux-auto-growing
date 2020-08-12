@@ -13,11 +13,9 @@ set -e;
 # environament variable for system package manager
 readonly packages="\
         base-devel \
-        git vi vim emacs-nox wget gdb clang lldb cmake \
+        git vim wget gdb clang lldb cmake \
         openssh boost boost-libs valgrind man man-pages \
         python-pip python2-pip ruby nodejs yarn \
-        arm-none-eabi-gcc arm-none-eabi-gdb \
-        arm-none-eabi-newlib arm-none-eabi-binutils \
         cronie \
         ttf-hack otf-fira-code \
         xorg-xinit xfce4 xfce4-goodies \
