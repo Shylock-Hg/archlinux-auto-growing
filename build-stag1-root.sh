@@ -12,6 +12,7 @@ set -e;
 
 # environament variable for system package manager
 readonly packages="\
+        sudo \
         git vim wget gdb clang lldb cmake \
         openssh boost boost-libs valgrind man man-pages \
         python-pip python2-pip ruby nodejs yarn \
