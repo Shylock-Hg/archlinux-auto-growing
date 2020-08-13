@@ -1,0 +1,11 @@
+language: minimal
+
+sudo: required
+
+services:
+  - docker
+
+script:
+  - echo 'exit' | docker run -t -v $PWD/build-stag1-root.sh:/build-stag1-root.sh -v $PWD/build-stag2-shylock.sh:/build-stag2-shylock.sh archlinux/base sh /build-stag1-root.sh
+  - docker restart $(docker ps -qa)
+  - ./.ci/test-docker.sh
