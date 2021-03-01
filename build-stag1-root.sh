@@ -19,7 +19,6 @@ readonly packages="\
         cronie \
         ttf-hack \
         xorg-xinit xfce4 xfce4-goodies \
-        firefox \
         docker docker-compose \
 "
 
@@ -28,11 +27,16 @@ eval \
 echo "root:${CI_ROOT_PASSWORD}" | chpasswd && \
 echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
 \
-# upgrade system
-pacman --noconfirm -Syu && \
+# guix
+wget 'https://sv.gnu.org/people/viewgpg.php?user_id=15145' -qO - | sudo -i gpg --import - \
+cd /tmp \
+wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh \
+chmod +x guix-install.sh \
+echo -e '\nyes\n' ./guix-install.sh \
+rm /tmp/guix-install.sh \
 \
 # install the softwares
-pacman --noconfirm --needed -Sy $packages && \
+guix install $packages && \
 \
 # add the user
 useradd -m -g users -G wheel -s /bin/bash shylock && \

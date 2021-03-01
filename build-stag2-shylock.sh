@@ -10,10 +10,6 @@
 
 set -e;
 
-# environament variable for system package manager
-export readonly NATIVE_INSTALL='sudo pacman --noconfirm --needed -Sy'
-export readonly AUR_INSTALL='yay --noconfirm --needed -Sy'
-
 eval \
 cd $HOME && \
 \
@@ -22,7 +18,7 @@ git config --global user.name 'Shylock-Hg' && \
 git config --global user.email 'tcath2s@gmail.com' && \
 \
 # zsh installation & oh-my-zsh configuration
-$NATIVE_INSTALL zsh powerline-fonts && \
+guix install zsh powerline-fonts && \
 sudo chsh -s /bin/zsh shylock && \
 echo 'export SHELL=/usr/sbin/zsh' >> $HOME/.zshenv && \
 curl -s https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh && \
@@ -31,10 +27,6 @@ curl -s https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/in
 curl https://sh.rustup.rs -sSf | sh -s -- -y && \
 echo 'export RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"' && \
 echo 'export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"' && \
-\
-# yay
-git clone https://aur.archlinux.org/yay.git && \
-cd yay && makepkg --noconfirm -si && cd .. && rm -rf yay .cache && \
 # \
 # # Conda and torch, tensorflow
 # wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh 2>/dev/null && \
@@ -65,11 +57,11 @@ curl https://raw.githubusercontent.com/Shylock-Hg/config.linux/master/build.sh |
 echo 'exec startxfce4' >> ~/.xinitrc && \
 \
 # vscode
-$NATIVE_INSTALL code && \
+# guix install code && \
 # vscode setting map
-mkdir -p $HOME/.config && \
-ln -sf $HOME/.config/'Code - OSS' $HOME/.config/Code && \
-ln -sf $HOME/.vscode-oss $HOME/.vscode && \
+# mkdir -p $HOME/.config && \
+# ln -sf $HOME/.config/'Code - OSS' $HOME/.config/Code && \
+# ln -sf $HOME/.vscode-oss $HOME/.vscode && \
 # reStructuredText supports for vscode plugin
 pip install --user docutils doc8
 
